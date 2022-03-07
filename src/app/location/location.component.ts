@@ -14,10 +14,19 @@ export class LocationComponent implements OnInit {
   }
 
   value = 'Zipcode';
+  days = 4;
 
   getWeather(){
 
-    this.weatherService.getWeatherService(this.value).subscribe(result => {console.log(result)})
+    let lat: number = 0;
+    let lon: number = 0;
+    this.weatherService.getGeoCode(this.value).subscribe((res: any) => {
+
+      lat = res.lat;
+      lon = res.lon;
+
+    })
+    this.weatherService.getForecastService(lat, lon, this.days).subscribe(result => {console.log(result)})
 
   }
 
