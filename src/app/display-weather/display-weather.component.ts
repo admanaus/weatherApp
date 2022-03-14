@@ -12,7 +12,9 @@ export class DisplayWeatherComponent implements OnInit {
 
   @Input() response:any;
 
+
   ngOnInit(): void {
+
   }
 
 }

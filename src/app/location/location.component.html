@@ -4,7 +4,7 @@
 
     <mat-form-field class="example-form-field" appearance="fill">
         <mat-label>Zipcode</mat-label>
-        <input matInput type="text" placeholder="zipcode" [(ngModel)]="zipcode">
+        <input matInput type="text" placeholder="zipcode" value="84097" [(ngModel)]="zipcode">
         <button *ngIf="zipcode" matSuffix mat-icon-button aria-label="Clear" (click)="zipcode=''">
           <mat-icon>close</mat-icon>
         </button>

@@ -10,8 +10,7 @@ export class LocationComponent implements OnInit {
 
   constructor(private weatherService: GetWeatherService) { }
 
-  zipcode = '';
-  days = 4;
+  zipcode = '84097';
   response:any;
 
   ngOnInit(): void {
