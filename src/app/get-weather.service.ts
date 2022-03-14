@@ -11,7 +11,7 @@ export class GetWeatherService {
 
   apiKey: string = "cc8ef8e5c209d938ab3801daa42b5e31";
 
-  getWeatherService(zipcode: string){
+  getCurrentWeather(zipcode: string){
     let url: string = "http://api.openweathermap.org/data/2.5/weather?zip="+ zipcode +"&units=imperial&appid=cc8ef8e5c209d938ab3801daa42b5e31";
     return this._http.get(url);
   }
