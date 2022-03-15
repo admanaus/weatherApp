@@ -1,10 +1,17 @@
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="!response">
     <mat-card-title>Enter your zipcode below.</mat-card-title>
     <mat-card-subtitle>(for your health)</mat-card-subtitle>
 
     <mat-form-field class="example-form-field" appearance="fill">
         <mat-label>Zipcode</mat-label>
-        <input matInput type="text" placeholder="zipcode" value="84097" [(ngModel)]="zipcode">
+        <input 
+          matInput 
+          type="text" 
+          placeholder="zipcode" 
+          value="84097" 
+          [(ngModel)]="zipcode"
+          (keydown.enter)="getWeather()"
+          >
         <button *ngIf="zipcode" matSuffix mat-icon-button aria-label="Clear" (click)="zipcode=''">
           <mat-icon>close</mat-icon>
         </button>

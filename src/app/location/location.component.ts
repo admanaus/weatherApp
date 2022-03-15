@@ -18,8 +18,16 @@ export class LocationComponent implements OnInit {
 
   getWeather(){
 
-    this.weatherService.getCurrentWeather(this.zipcode).subscribe(res => {
-      this.response = res;
+    // this.weatherService.getCurrentWeather(this.zipcode).subscribe(res => {
+    //   this.response = res;
+    // })
+
+    this.weatherService.getGeoCode(this.zipcode).subscribe(res => {
+      let response: any = res;
+      this.weatherService.getForecastService(response.lat, response.lon, 4 ).subscribe(res => {
+        this.response = res;
+        this.zipcode = '';
+      })
     })
 
   }

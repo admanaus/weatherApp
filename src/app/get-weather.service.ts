@@ -18,7 +18,7 @@ export class GetWeatherService {
 
   getForecastService(lat: number, lon: number, days: number){
 
-      const url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+ lat +"&lon="+lon+"&cnt="+ days +"&appid=cc8ef8e5c209d938ab3801daa42b5e31";
+      const url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+ lat +"&lon="+lon+"&cnt="+ days +"&units=imperial&appid=cc8ef8e5c209d938ab3801daa42b5e31";
       return this._http.get(url);
   }
 
